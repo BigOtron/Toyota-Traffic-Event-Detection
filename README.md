@@ -19,6 +19,8 @@ Part B (accident anticipation) is the default zero-risk estimator.
 **Score A = 0.690** on our own labels of the 4 sample videos (13 events), full run with the
 unchanged `run_submission.py` + `evaluate.py`. Runtime ≈ 1.0–1.6× video length on a laptop GPU.
 
+**Team website + live demo:** https://huggingface.co/spaces/shermukhammad/traffic-event-detection
+
 ## Run (the two commands)
 
 ```bash

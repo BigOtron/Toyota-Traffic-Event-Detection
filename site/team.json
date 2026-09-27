@@ -1,6 +1,7 @@
 {
   "team_name": "Developers",
   "links": {
+    "website": "https://huggingface.co/spaces/shermukhammad/traffic-event-detection",
     "repository": "https://github.com/BigOtron/Toyota-Traffic-Event-Detection",
     "weights": "https://github.com/BigOtron/Toyota-Traffic-Event-Detection/blob/main/weights/yolov8s.pt",
     "predictions_samples": "https://github.com/BigOtron/Toyota-Traffic-Event-Detection/blob/main/predictions_samples.json"
