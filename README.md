@@ -88,11 +88,11 @@ Set `TRAFFIC_DEBUG=1` to save tracks, the first frame and the homography of ever
 
 | Member | Role | Who did what |
 |---|---|---|
-| Member 1 (captain) | Detection, tracking, camera alignment | TODO |
-| Member 2 | Scene zones, labelling, rules and evaluation | TODO |
-| Member 3 | Website, demo, packaging | TODO |
+| Mirahmad Zoxidov (captain) | Detection, tracking, camera alignment | YOLOv8s + ByteTrack pipeline, SIFT camera alignment, fixed the tracker-callback bug (0.29 → 0.69) |
+| Shermukhammad Karimov | Scene zones, labelling, rules and evaluation | Scene zones, labels for the 13 sample events, jaywalking rule design and tuning |
+| Og'abek Sag'dullayev | Website, demo, packaging | Gradio website and live demo, EDA and result videos, packaging for the offline run |
 
-Links, profiles and previous projects are on the team website (`site/team.json`).
+GitHub and LinkedIn links are on the team website (Team tab, from `site/team.json`).
 
 ## Models, data and licences
 
