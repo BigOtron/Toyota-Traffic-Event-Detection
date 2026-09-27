@@ -139,8 +139,8 @@ def team_md():
     parts = [f"## {TEAM.get('team_name', '')}"]
     for m in TEAM.get("members", []):
         links = " · ".join(f"[{k}]({m[k]})" for k in ("github", "linkedin", "portfolio") if m.get(k))
-        parts.append(f"### {m['name']}\n**{m['role']}**\n\n{m.get('did', '')}\n\n"
-                     f"Proud of: {m.get('projects', '')}\n\n{links}")
+        proud = f"Proud of: {m['projects']}\n\n" if m.get("projects") else ""
+        parts.append(f"### {m['name']}\n**{m['role']}**\n\n{m.get('did', '')}\n\n{proud}{links}")
     lk = TEAM.get("links", {})
     parts.append("### Links\n" + "\n".join(f"* [{k.replace('_', ' ')}]({v})" for k, v in lk.items()))
     return "\n\n".join(parts)
