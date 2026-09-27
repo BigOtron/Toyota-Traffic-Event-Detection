@@ -1,9 +1,9 @@
 {
-  "team_name": "YOUR TEAM NAME",
+  "team_name": "Developers",
   "links": {
-    "repository": "https://github.com/YOUR_ACCOUNT/YOUR_REPO",
-    "weights": "https://github.com/YOUR_ACCOUNT/YOUR_REPO/blob/main/weights/yolov8s.pt",
-    "predictions_samples": "https://github.com/YOUR_ACCOUNT/YOUR_REPO/blob/main/predictions_samples.json"
+    "repository": "https://github.com/BigOtron/Toyota-Traffic-Event-Detection",
+    "weights": "https://github.com/BigOtron/Toyota-Traffic-Event-Detection/blob/main/weights/yolov8s.pt",
+    "predictions_samples": "https://github.com/BigOtron/Toyota-Traffic-Event-Detection/blob/main/predictions_samples.json"
   },
   "members": [
     {

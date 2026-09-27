@@ -23,12 +23,17 @@ unchanged `run_submission.py` + `evaluate.py`. Runtime ≈ 1.0–1.6× video len
 
 ```bash
 pip install -r requirements.txt       # Python 3.10+; weights/yolov8s.pt is included
-python run_submission.py --videos <folder with .mp4> --out predictions.json
+python run_submission.py --videos <folder with .mp4> --out predictions.json --team Developers
 python evaluate.py --pred predictions.json --gt my_labels.json
 ```
 
+`run_submission.py` and `evaluate.py` are the unchanged starter-kit files.
 `predictions_samples.json` is the output of this exact command on the 4 sample videos.
-No internet is needed at run time (weights are in `weights/`, `lapx` is in `requirements.txt`).
+
+**Weights:** `weights/yolov8s.pt` (22 MB, Ultralytics COCO release v8.3.0) is committed to the repo;
+there is no download step. No internet is needed at run time (`lapx` for ByteTrack is in `requirements.txt`).
+Versions are pinned (`ultralytics==8.3.40`, `torch==2.7.1` with CUDA 12.6); the pipeline runs on GPU
+when one is visible and falls back to CPU otherwise.
 
 ## Pipeline
 
@@ -77,9 +82,26 @@ Set `TRAFFIC_DEBUG=1` to save tracks, the first frame and the homography of ever
 
 `torch.manual_seed(0)`; YOLO inference and ByteTrack are deterministic on the same machine. Two runs give the same `predictions.json`.
 
+## Team — Developers (`8F408C31`)
+
+| Member | Role | Who did what |
+|---|---|---|
+| Member 1 (captain) | Detection, tracking, camera alignment | TODO |
+| Member 2 | Scene zones, labelling, rules and evaluation | TODO |
+| Member 3 | Website, demo, packaging | TODO |
+
+Links, profiles and previous projects are on the team website (`site/team.json`).
+
 ## Models, data and licences
 
 - **YOLOv8s** — Ultralytics, COCO-pretrained weights, AGPL-3.0.
 - **ByteTrack** — via Ultralytics (original: MIT).
 - **Data** — only the 4 sample videos provided by the organizers, labelled by our team (`my_labels.json`). No external datasets.
 - Other libraries: OpenCV (Apache-2.0), NumPy, pandas, matplotlib, Plotly, Gradio.
+
+## Attribution
+
+- Detector and tracker: [Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics) (AGPL-3.0) and its
+  built-in ByteTrack configuration (`bytetrack.yaml`; ByteTrack by Zhang et al., MIT).
+- `run_submission.py`, `evaluate.py` and the `solution.py` interface come from the WIUT Hackathon 2026 starter kit.
+- All other code (`src/`, `tools/`, `app.py`) was written by the team.
