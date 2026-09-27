@@ -1,8 +1,11 @@
-# Pinned for reproducibility. torch 2.7.1 from PyPI is built with CUDA 12.6: it runs on
-# T4-class GPUs with NVIDIA driver >= 525 and falls back to CPU if no GPU is visible.
+# Pinned for reproducibility. torch 2.7.1 (Python 3.10-3.13) and 2.9.1 (Python 3.14+, the first
+# release with 3.14 wheels) are PyPI builds for CUDA 12.x: they run on T4-class GPUs with NVIDIA
+# driver >= 525 and fall back to CPU if no GPU is visible.
 ultralytics==8.3.40
-torch==2.7.1
-torchvision==0.22.1
+torch==2.7.1; python_version < "3.14"
+torchvision==0.22.1; python_version < "3.14"
+torch==2.9.1; python_version >= "3.14"
+torchvision==0.24.1; python_version >= "3.14"
 lapx>=0.5.2
 opencv-python>=4.8,<5
 numpy
