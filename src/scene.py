@@ -27,6 +27,7 @@ class Scene:
         self.crosswalks = [poly(p) for p in cfg["crosswalks"].values()]
         self.islands = [poly(p) for p in cfg["islands"].values()]
         self.reference = cv2.imread(str(CONFIG_DIR / cfg["reference_frame"]), cv2.IMREAD_GRAYSCALE)
+        self._ref_features = None  # SIFT on the reference, computed once (see _reference_features)
 
     # ---- zone tests (signed distance in px: >0 inside, <0 outside) ----
     @staticmethod
@@ -41,6 +42,13 @@ class Scene:
         return d_road, d_cw, d_isl, far
 
     # ---- alignment ----
+    def _reference_features(self):
+        """SIFT keypoints/descriptors of the reference; it never changes, so compute them once."""
+        if self._ref_features is None:
+            b = cv2.createCLAHE(3.0, (8, 8)).apply(self.reference)
+            self._ref_features = cv2.SIFT_create(8000).detectAndCompute(b, _static_mask(b))
+        return self._ref_features
+
     def homography(self, frame_bgr: np.ndarray) -> np.ndarray:
         """3x3 matrix mapping pixels of `frame_bgr` to reference (3840x2160) pixels."""
         return self.homography_with_score(frame_bgr)[0]
@@ -57,17 +65,9 @@ class Scene:
         s_vid = WORK_WIDTH / w
         gray = cv2.cvtColor(frame_bgr, cv2.COLOR_BGR2GRAY)
         a = clahe.apply(cv2.resize(gray, (WORK_WIDTH, round(h * s_vid)), interpolation=cv2.INTER_AREA))
-        b = clahe.apply(self.reference)
-        s_ref = b.shape[1] / REF_SIZE[0]
-
-        def mask(img):  # static lower part only (no trees, buildings or sky)
-            m = np.zeros_like(img)
-            m[int(img.shape[0] * 0.40):, :] = 255
-            return m
-
-        sift = cv2.SIFT_create(8000)
-        k1, d1 = sift.detectAndCompute(a, mask(a))
-        k2, d2 = sift.detectAndCompute(b, mask(b))
+        s_ref = self.reference.shape[1] / REF_SIZE[0]
+        k1, d1 = cv2.SIFT_create(8000).detectAndCompute(a, _static_mask(a))
+        k2, d2 = self._reference_features()
         identity = np.diag([1 / s_ref, 1 / s_ref, 1.0]) @ np.diag([s_vid, s_vid, 1.0])
         if d1 is None or d2 is None or len(k1) < 20 or len(k2) < 20:
             return identity, 0
@@ -82,6 +82,13 @@ class Scene:
         # video px -> small video px -> small ref px -> reference px
         H = np.diag([1 / s_ref, 1 / s_ref, 1.0]) @ H_small @ np.diag([s_vid, s_vid, 1.0])
         return H, int(inliers.sum())
+
+
+def _static_mask(img: np.ndarray) -> np.ndarray:
+    """Static lower part of the frame only (no trees, buildings or sky)."""
+    m = np.zeros_like(img)
+    m[int(img.shape[0] * 0.40):, :] = 255
+    return m
 
 
 def to_reference(H: np.ndarray, xy: np.ndarray) -> np.ndarray:

@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+debug/
+tracks/
+frames/
+samples/
+predictions.json
+predictions_from_csv.json
+*_report.json
