@@ -1,0 +1,28 @@
+{
+ "video": "C3896.MP4",
+ "duration": 340.34,
+ "events": [
+  [
+   164.87,
+   171.07,
+   "jaywalking"
+  ],
+  [
+   240.24,
+   253.35,
+   "jaywalking"
+  ]
+ ],
+ "labels": [
+  [
+   164.0,
+   171.0,
+   "jaywalking"
+  ],
+  [
+   239.0,
+   251.0,
+   "jaywalking"
+  ]
+ ]
+}

@@ -1,0 +1,39 @@
+{
+  "C3896.MP4": {
+    "duration": 340.34,
+    "fps": 29.97002997002997,
+    "events": [
+      [164.0, 171.0, "jaywalking"],
+      [239.0, 251.0, "jaywalking"]
+    ]
+  },
+  "C3897.MP4": {
+    "duration": 317.8175,
+    "fps": 29.97002997002997,
+    "events": [
+      [3.0, 19.0, "jaywalking"],
+      [78.0, 90.0, "jaywalking"],
+      [292.0, 305.0, "jaywalking"],
+      [306.0, 317.8175, "jaywalking"]
+    ]
+  },
+  "C3902.MP4": {
+    "duration": 317.8175,
+    "fps": 29.97002997002997,
+    "events": [
+      [82.0, 99.0, "jaywalking"],
+      [176.0, 191.0, "jaywalking"],
+      [220.0, 239.0, "jaywalking"],
+      [257.0, 272.0, "jaywalking"]
+    ]
+  },
+  "C3905.MP4": {
+    "duration": 127.6275,
+    "fps": 29.97002997002997,
+    "events": [
+      [11.5, 22.5, "jaywalking"],
+      [72.5, 80.0, "jaywalking"],
+      [101.0, 118.0, "jaywalking"]
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+ultralytics==8.3.40
+lapx>=0.5.2
+opencv-python>=4.8
+numpy
+pandas
+matplotlib
+plotly

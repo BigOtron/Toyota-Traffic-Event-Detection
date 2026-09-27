@@ -1,0 +1,66 @@
+[
+ {
+  "video": "C3896",
+  "resolution": "3840x2160",
+  "duration_s": 340.2,
+  "brightness": 95.5,
+  "camera_shift_px": 0.0,
+  "alignment_inliers": 2766,
+  "tracks": {
+   "person": 444,
+   "car": 665,
+   "bus": 99,
+   "truck": 157,
+   "motorcycle": 14,
+   "bicycle": 3
+  }
+ },
+ {
+  "video": "C3897",
+  "resolution": "3840x2160",
+  "duration_s": 317.7,
+  "brightness": 96.5,
+  "camera_shift_px": 8.4,
+  "alignment_inliers": 1343,
+  "tracks": {
+   "person": 580,
+   "car": 600,
+   "bus": 64,
+   "truck": 111,
+   "motorcycle": 19,
+   "bicycle": 9
+  }
+ },
+ {
+  "video": "C3902",
+  "resolution": "3840x2160",
+  "duration_s": 317.7,
+  "brightness": 70.3,
+  "camera_shift_px": 112.0,
+  "alignment_inliers": 168,
+  "tracks": {
+   "person": 592,
+   "car": 679,
+   "bus": 100,
+   "truck": 177,
+   "motorcycle": 33,
+   "bicycle": 25
+  }
+ },
+ {
+  "video": "C3905",
+  "resolution": "3840x2160",
+  "duration_s": 127.5,
+  "brightness": 39.2,
+  "camera_shift_px": 36.9,
+  "alignment_inliers": 182,
+  "tracks": {
+   "person": 242,
+   "car": 325,
+   "bus": 42,
+   "truck": 78,
+   "motorcycle": 15,
+   "bicycle": 10
+  }
+ }
+]

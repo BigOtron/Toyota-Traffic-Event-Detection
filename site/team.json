@@ -1,0 +1,37 @@
+{
+  "team_name": "YOUR TEAM NAME",
+  "links": {
+    "repository": "https://github.com/YOUR_ACCOUNT/YOUR_REPO",
+    "weights": "https://github.com/YOUR_ACCOUNT/YOUR_REPO/blob/main/weights/yolov8s.pt",
+    "predictions_samples": "https://github.com/YOUR_ACCOUNT/YOUR_REPO/blob/main/predictions_samples.json"
+  },
+  "members": [
+    {
+      "name": "Member 1",
+      "role": "Detection, tracking, camera alignment",
+      "did": "What this person built, 1-2 sentences.",
+      "github": "https://github.com/...",
+      "linkedin": "https://linkedin.com/in/...",
+      "portfolio": "https://...",
+      "projects": "A previous project you are proud of."
+    },
+    {
+      "name": "Member 2",
+      "role": "Scene zones, labelling, rules and evaluation",
+      "did": "What this person built, 1-2 sentences.",
+      "github": "https://github.com/...",
+      "linkedin": "https://linkedin.com/in/...",
+      "portfolio": "https://...",
+      "projects": "A previous project you are proud of."
+    },
+    {
+      "name": "Member 3",
+      "role": "Website, demo, packaging",
+      "did": "What this person built, 1-2 sentences.",
+      "github": "https://github.com/...",
+      "linkedin": "https://linkedin.com/in/...",
+      "portfolio": "https://...",
+      "projects": "A previous project you are proud of."
+    }
+  ]
+}
